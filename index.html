@@ -47,6 +47,16 @@
   });
 });
 			</script>
+			<script>
+				$(document).click(function(e){
+					var clickover = $(e.target);
+					var $navbar = $(".navbar-collapse");
+					var _opened = $navbar.hasClass("in");
+					if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+						$navbar.collapse('hide');
+					}					
+				});
+			</script>
 	<!-- js for basic  -->		
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -62,11 +72,10 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="#myPage">Start</a></li>
+				<li class="active"><a href="#myPage">Strona główna</a></li>
 				<li><a href="#priorities">Priorytety</a></li>
 				<li><a href="#basic">Wyposażenie</a></li>
-				<li><a href="#about">Dodatkowe</a></li>
-				<li><a href="#team">Przyszłość</a></li>
+				<li><a href="#additional">Dodatkowe</a></li>
 				<li><a href="#contact">Kontakt</a></li>
 			</ul>
 		</div>
@@ -75,7 +84,7 @@
 <!-- banner -->
 <div class="jumbotron banner">
 	<div class="banner-content">
-		<a href="#priorities"><img src="images/arrowdown.png"></a>
+		<a href="#priorities"><img src="images/arrowdown1.png"></a>
 		<div class="clearfix"></div>
 	</div>	
 </div>	
@@ -105,6 +114,7 @@
 </div>
 <!-- /Our Priorities -->
 <!-- basic -->
+
 <div class="basics" id="basic">
 <h3>Wyposażenie podstawowe</h3>
 <div class="gallery-cursual slideanim" >
@@ -214,18 +224,18 @@
 </div>
 <!-- /caption-popup -->
 <!-- basic -->
-<!-- About-us -->
-<div class="about-us" id="about">
+<!-- additional-us -->
+<div class="additional-us" id="additional">
 	<div class="container">		
 		<div class="row">
-			<div class="col-sm-6 text-center slideanim about1">
+			<div class="col-sm-6 text-center slideanim additional1">
 				<h4>Wyposażenie Dodatkowe</h4>
 				<hr>
 				<p class="p1">System <strong>MAGIC SKY CONTROL</strong> daje poczucie przestrzeni ‒ wystarczy nacisnąć przycisk. Dwuczęściowy panoramiczny dach odsuwany w ciągu kilku sekund zmienia się z ciemnego na przezroczysty lub odwrotnie. Obie części dachu mogą się zabarwiać niezależnie od siebie.</p>
 				<p class="p1">Harmonijnie zestawiony wystrój <strong>wnętrza designo</strong> urzeka swym jednolitym charakterem. Od tapicerki siedzeń, poprzez środkowe powierzchnie drzwi po górną część deski rozdzielczej ‒ to wnętrze dostarcza emocjonujących wrażeń wizualnych i sensorycznych.</p>
 				<p class="p1">Samochody wyczynowe <strong>Mercedes-AMG</strong> napędzają silniki bi-turbo o ekstremalnej mocy i wydajności, łączące wielką siłę napędową z wysoką kulturą pracy. Również wyjątkowe są wysokiej klasy skrzynie biegów, oferujące najwyższy komfort jazdy.</p>
 			</div>
-			<div class="col-sm-6 slideanim about2">
+			<div class="col-sm-6 slideanim additional2">
 			<!-- carousel -->
 				<div id="myCarousel" class="carousel slide">
 				<!-- Indicators -->
@@ -270,21 +280,7 @@
 		</div>
 	</div>	
 </div>
-<!-- /About-us -->
-<!-- Team -->
-<div class="team" id="team">
-	<div class="container">
-		<div id="insetBgd">
-			<h1 class="insertType">Jesteśmy przyszłością</h1>
-		</div>
-		<div class="row placeholders">
-			
-            
-		</div>
-	</div>		
-</div>
-<!-- /Team -->
-<!-- Contact -->
+
 <div class="contact-us" id="contact">
 	<div class="container">		
 		<h3 class="text-center slideanim">Masz pytania?</h3>
@@ -323,8 +319,7 @@
 					<div><a href="#myPage"><i class="glyphicon glyphicon-home"></i><p>Strona główna</p></a></div>
 					<div><a href="#priorities"><i class="glyphicon glyphicon-certificate"></i><p>Priorytety</p></a></div>
 					<div><a href="#basic"><i class="glyphicon glyphicon-modal-window"></i><p>Wyposażenie</p></a></div>
-					<div><a href="#about"><i class="glyphicon glyphicon-info-sign"></i><p>Dodatkowe</p></a></div>
-					<div><a href="#team"><i class="glyphicon glyphicon-user"></i><p>Przyszłość</p></a></div>
+					<div><a href="#additional"><i class="glyphicon glyphicon-info-sign"></i><p>Dodatkowe</p></a></div>		
 					<div><a href="#contact"><i class="glyphicon glyphicon-phone"></i><p>Kontakt</p></a></div>
 				</div>	
 			</div>
@@ -350,7 +345,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 footer-right">
-				<p class="footer-company-about">
+				<p class="footer-company-additional">
 				<span>O mnie</span>
 				Student informatyki, który dąży do bycia dobrym Front-end developerem.
 				</p>
@@ -364,7 +359,7 @@
 		</div>	
 		<hr>
 		<div class="copyright">
-			<p class="text-center">Edytowane przez <a href="http://github.com/mi00" target="_blank">Mi00 - profil GitHub</a></p>
+			<p class="text-center">Edytowane przez <a href="https://github.com/Mi00/html-onepage-mercedes" target="_blank">Mi00 - profil GitHub</a></p>
 		</div>
 		<a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
 	</div>	
@@ -395,7 +390,7 @@
 		<script>
 $(document).ready(function(){
     // Activate Carousel
-    $("#myCarousel").carousel({interval: 2000, pause: "hover"});
+    $("#myCarousel").carousel({interval: 4000, pause: "hover"});
     
     // Enable Carousel Indicators
     $(".item1").click(function(){
